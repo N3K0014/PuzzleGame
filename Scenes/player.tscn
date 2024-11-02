@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://dkd8ud5lmesyh"]
+[gd_scene load_steps=16 format=3 uid="uid://dkd8ud5lmesyh"]
 
+[ext_resource type="Script" path="res://Scenes/player.gd" id="1_qtks7"]
 [ext_resource type="Texture2D" uid="uid://cl4uwel8uuf5j" path="res://Assets/Player/Player_Idle-sheet.png" id="1_r7133"]
 [ext_resource type="Texture2D" uid="uid://dbd0xvkbyn2gf" path="res://Assets/Player/Player_PushingSides.png" id="2_agagj"]
 
@@ -39,6 +40,10 @@ region = Rect2(32, 0, 16, 16)
 atlas = ExtResource("2_agagj")
 region = Rect2(48, 0, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_3u6gd"]
+atlas = ExtResource("1_r7133")
+region = Rect2(0, 0, 16, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_4g1q1"]
 animations = [{
 "frames": [{
@@ -77,17 +82,34 @@ animations = [{
 "loop": true,
 "name": &"SidePush",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3u6gd")
+}],
+"loop": true,
+"name": &"Sprite",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ulje"]
+size = Vector2(16, 16)
 
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_qtks7")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4g1q1")
-animation = &"SidePush"
+animation = &"Sprite"
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_6ulje")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
