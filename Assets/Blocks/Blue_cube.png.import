@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4m1o2bt5w2d3"
-path="res://.godot/imported/Pink_cube.png-e933b5b79ecd2e9fc3a5912d36e37832.ctex"
+uid="uid://clwe5k5ejsr0m"
+path="res://.godot/imported/Blue_cube.png-c9c7361bef11b327f7587d0edf8dfe6d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pink_cube.png"
-dest_files=["res://.godot/imported/Pink_cube.png-e933b5b79ecd2e9fc3a5912d36e37832.ctex"]
+source_file="res://Assets/Blocks/Blue_cube.png"
+dest_files=["res://.godot/imported/Blue_cube.png-c9c7361bef11b327f7587d0edf8dfe6d.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

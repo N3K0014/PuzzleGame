@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvskpxiftn7yw"
-path="res://.godot/imported/Orange_cube.png-9b4ce440cbeeb371465c642f599a03b4.ctex"
+uid="uid://dbd0xvkbyn2gf"
+path="res://.godot/imported/Player_PushingSides.png-ba7c8d38807f022999cd83852a21fb51.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Orange_cube.png"
-dest_files=["res://.godot/imported/Orange_cube.png-9b4ce440cbeeb371465c642f599a03b4.ctex"]
+source_file="res://Assets/Player/Player_PushingSides.png"
+dest_files=["res://.godot/imported/Player_PushingSides.png-ba7c8d38807f022999cd83852a21fb51.ctex"]
 
 [params]
 
