@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cc1a2ye25pnme"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4g1q1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ulje"]
+
+[node name="Game_Scene" type="Node2D"]
+
+[node name="Level" type="TileMapLayer" parent="."]
+
+[node name="Player" type="CharacterBody2D" parent="Level"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Level/Player"]
+sprite_frames = SubResource("SpriteFrames_4g1q1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Player"]
+shape = SubResource("RectangleShape2D_6ulje")
