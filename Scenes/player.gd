@@ -2,8 +2,10 @@ extends CharacterBody2D
 
 @onready var player_sprite: AnimatedSprite2D = $PlayerSprite
 @onready var timer: Timer = $Timer
+@onready var ray = $RayCast2D
 
 var playermoving
+var grid_size = 16
 
 var inputs = {
 	"ui_up": Vector2.UP,
@@ -18,8 +20,12 @@ func _unhandled_input(event: InputEvent) -> void:
 		else:
 			playermoving == false
 func move(dir):
-	position += inputs[dir] * 16
-	playermoving == true
+	var vector_pos = inputs[dir] * grid_size
+	ray.target_position = vector_pos
+	ray.force_raycast_update()
+	if !ray.is_colliding():
+		position += vector_pos
+		playermoving == true
 
 func _on_timer_timeout() -> void:
 	if playermoving == false:
