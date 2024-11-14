@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cc1a2ye25pnme"]
 
 [ext_resource type="PackedScene" uid="uid://dkd8ud5lmesyh" path="res://Scenes/player.tscn" id="1_3ifn7"]
+[ext_resource type="PackedScene" uid="uid://cti8mt1d5b1t0" path="res://Scenes/Objects/blue_block.tscn" id="2_gjjfs"]
 
 [node name="Game_Scene" type="Node2D"]
 
@@ -12,3 +13,7 @@ position = Vector2(96, 64)
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 zoom = Vector2(3, 3)
+
+[node name="BlueBlock" parent="." instance=ExtResource("2_gjjfs")]
+position = Vector2(144, 64)
+
