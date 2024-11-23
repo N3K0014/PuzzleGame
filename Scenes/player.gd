@@ -19,6 +19,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			move(dir)
 		else:
 			playermoving == false
+			
 func move(dir):
 	var vector_pos = inputs[dir] * grid_size
 	ray.target_position = vector_pos
@@ -26,6 +27,11 @@ func move(dir):
 	if !ray.is_colliding():
 		position += vector_pos
 		playermoving == true
+	else:
+		var collider = ray.get_collider()
+		if collider.is_in_group('box'):
+			if collider.move(dir):
+				position += vector_pos
 
 func _on_timer_timeout() -> void:
 	if playermoving == false:
