@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://3a0hwima3evc"]
+[gd_scene load_steps=6 format=3 uid="uid://3a0hwima3evc"]
 
 [ext_resource type="Texture2D" uid="uid://bm7ra5kvxlwqe" path="res://Assets/Wall/Wood_wall_tileset.png" id="1_ua5rj"]
+[ext_resource type="Texture2D" uid="uid://cmarad4lg8fck" path="res://Assets/Floor/Wood_Floor_Planks.png" id="2_x1jix"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hlkiy"]
 texture = ExtResource("1_ua5rj")
@@ -61,9 +62,15 @@ texture = ExtResource("1_ua5rj")
 7:0/0 = 0
 7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o4stc"]
+texture = ExtResource("2_x1jix")
+0:0/0 = 0
+0:0/0/z_index = -1
+
 [sub_resource type="TileSet" id="TileSet_u1nc7"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_hlkiy")
+sources/1 = SubResource("TileSetAtlasSource_o4stc")
 
-[node name="WallSet" type="TileMapLayer"]
+[node name="TileSet" type="TileMapLayer"]
 tile_set = SubResource("TileSet_u1nc7")
