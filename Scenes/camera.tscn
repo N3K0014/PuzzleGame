@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cdijncj0n7ufl"]
+
+[node name="Camera2D" type="Camera2D"]
+anchor_mode = 0
+zoom = Vector2(3, 3)
+
+[node name="ConfirmationDialog" type="AcceptDialog" parent="."]
+auto_translate_mode = 1
+initial_position = 1
+size = Vector2i(120, 100)
+dialog_text = "Level Cleared"
