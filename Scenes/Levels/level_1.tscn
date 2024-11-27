@@ -1,29 +1,29 @@
-[gd_scene load_steps=7 format=4 uid="uid://cc1a2ye25pnme"]
+[gd_scene load_steps=7 format=4 uid="uid://8a8uxd63r2m1"]
 
-[ext_resource type="PackedScene" uid="uid://dkd8ud5lmesyh" path="res://Scenes/player.tscn" id="1_3ifn7"]
-[ext_resource type="Script" path="res://Scenes/game_scene.gd" id="1_vbgvu"]
-[ext_resource type="PackedScene" uid="uid://cdijncj0n7ufl" path="res://Scenes/camera.tscn" id="3_bdm14"]
-[ext_resource type="PackedScene" uid="uid://dec4w63mqh6vm" path="res://Scenes/Objects/box.tscn" id="3_hjito"]
-[ext_resource type="PackedScene" uid="uid://5ip5urigq6uh" path="res://Scenes/Objects/spot.tscn" id="4_jg1dn"]
-[ext_resource type="PackedScene" uid="uid://3a0hwima3evc" path="res://Scenes/TileSet.tscn" id="5_agfbc"]
+[ext_resource type="Script" path="res://Scenes/Levels/level_1.gd" id="1_ao2ll"]
+[ext_resource type="PackedScene" uid="uid://dkd8ud5lmesyh" path="res://Scenes/player.tscn" id="1_wu560"]
+[ext_resource type="PackedScene" uid="uid://cdijncj0n7ufl" path="res://Scenes/camera.tscn" id="2_fd5jm"]
+[ext_resource type="PackedScene" uid="uid://bgfwlvipg3rlk" path="res://Scenes/Objects/circle_spot.tscn" id="4_waxph"]
+[ext_resource type="PackedScene" uid="uid://3a0hwima3evc" path="res://Scenes/TileSet.tscn" id="5_d0vn0"]
+[ext_resource type="PackedScene" uid="uid://bmbfj70n2mi8p" path="res://Scenes/Objects/circle_box.tscn" id="5_mx87m"]
 
-[node name="Game_Scene" type="Node2D"]
-script = ExtResource("1_vbgvu")
+[node name="Level1" type="Node2D"]
+script = ExtResource("1_ao2ll")
 
-[node name="Player" parent="." instance=ExtResource("1_3ifn7")]
+[node name="Player" parent="." instance=ExtResource("1_wu560")]
 position = Vector2(160, 64)
 
-[node name="Camera2D" parent="." instance=ExtResource("3_bdm14")]
+[node name="Camera2D" parent="." instance=ExtResource("2_fd5jm")]
 
 [node name="Spots" type="Node" parent="."]
 
-[node name="Spot" parent="Spots" instance=ExtResource("4_jg1dn")]
-position = Vector2(208, 160)
+[node name="CircleSpot" parent="Spots" instance=ExtResource("4_waxph")]
+position = Vector2(208, 144)
 
-[node name="Box2" type="Node" parent="."]
+[node name="Box" type="Node" parent="."]
 
-[node name="Box" parent="Box2" instance=ExtResource("3_hjito")]
+[node name="CircleBox" parent="Box" instance=ExtResource("5_mx87m")]
 position = Vector2(160, 144)
 
-[node name="TileSet" parent="." instance=ExtResource("5_agfbc")]
+[node name="TileSet" parent="." instance=ExtResource("5_d0vn0")]
 tile_map_data = PackedByteArray("AAAHAAEAAAAAAAEAAAAHAAIAAAAAAAEAAAAHAAMAAAAAAAEAAAAHAAQAAAAAAAEAAAAHAAUAAAAAAAEAAAAHAAYAAAAAAAEAAAAHAAcAAAAAAAEAAAAHAAgAAAAAAAEAAAAHAAkAAAAAAAEAAAAHAAoAAAAAAAEAAAAHAAsAAAAAAAEAAAAHAAwAAAAAAAIAAAAIAAEAAAAEAAAAAAAIAAIAAAACAAEAAAAIAAMAAAACAAEAAAAIAAQAAAACAAEAAAAIAAUAAAACAAEAAAAIAAYAAAACAAEAAAAIAAcAAAACAAEAAAAIAAgAAAACAAEAAAAIAAkAAAACAAEAAAAIAAoAAAACAAEAAAAIAAsAAAAEAAEAAAAIAAwAAAABAAIAAAAJAAEAAAABAAIAAAAJAAIAAQAAAAAAAAAJAAMAAQAAAAAAAAAJAAQAAQAAAAAAAAAJAAUAAQAAAAAAAAAJAAYAAQAAAAAAAAAJAAcAAQAAAAAAAAAJAAgAAQAAAAAAAAAJAAkAAQAAAAAAAAAJAAoAAQAAAAAAAAAJAAsAAAABAAAAAAAJAAwAAAABAAIAAAAKAAEAAAABAAIAAAAKAAIAAQAAAAAAAAAKAAMAAQAAAAAAAAAKAAQAAQAAAAAAAAAKAAUAAQAAAAAAAAAKAAYAAQAAAAAAAAAKAAcAAQAAAAAAAAAKAAkAAQAAAAAAAAAKAAoAAQAAAAAAAAAKAAsAAAABAAAAAAAKAAwAAAABAAIAAAALAAEAAAABAAIAAAALAAIAAQAAAAAAAAALAAMAAQAAAAAAAAALAAQAAQAAAAAAAAALAAUAAQAAAAAAAAALAAYAAQAAAAAAAAALAAcAAAAGAAAAAAALAAgAAAADAAEAAAALAAkAAAADAAEAAAALAAoAAAADAAEAAAALAAsAAAAFAAIAAAALAAwAAAABAAIAAAAMAAEAAAABAAIAAAAMAAIAAQAAAAAAAAAMAAMAAQAAAAAAAAAMAAQAAQAAAAAAAAAMAAUAAQAAAAAAAAAMAAYAAQAAAAAAAAAMAAcAAAACAAMAAAAMAAgAAQAAAAAAAAAMAAkAAQAAAAAAAAAMAAoAAQAAAAAAAAAMAAsAAAABAAAAAAAMAAwAAAABAAIAAAANAAEAAAABAAIAAAANAAIAAQAAAAAAAAANAAMAAQAAAAAAAAANAAQAAQAAAAAAAAANAAUAAQAAAAAAAAANAAYAAQAAAAAAAAANAAcAAQAAAAAAAAANAAgAAQAAAAAAAAANAAkAAQAAAAAAAAANAAoAAQAAAAAAAAANAAsAAAABAAAAAAANAAwAAAABAAIAAAAOAAEAAAABAAIAAAAOAAIAAQAAAAAAAAAOAAMAAQAAAAAAAAAOAAQAAQAAAAAAAAAOAAUAAQAAAAAAAAAOAAYAAQAAAAAAAAAOAAcAAAAAAAMAAAAOAAgAAQAAAAAAAAAOAAkAAQAAAAAAAAAOAAoAAQAAAAAAAAAOAAsAAAABAAAAAAAOAAwAAAABAAIAAAAPAAEAAAAFAAAAAAAPAAIAAAAAAAEAAAAPAAMAAAAAAAEAAAAPAAQAAAAAAAEAAAAPAAUAAAAAAAEAAAAPAAYAAAAAAAEAAAAPAAcAAAAFAAMAAAAPAAgAAAAAAAEAAAAPAAkAAAAAAAEAAAAPAAoAAAAAAAEAAAAPAAsAAAAFAAEAAAAPAAwAAAABAAIAAAAQAAEAAAACAAEAAAAQAAIAAAACAAEAAAAQAAMAAAACAAEAAAAQAAQAAAACAAEAAAAQAAUAAAACAAEAAAAQAAYAAAACAAEAAAAQAAcAAAACAAEAAAAQAAgAAAACAAEAAAAQAAkAAAACAAEAAAAQAAoAAAACAAEAAAAQAAsAAAACAAEAAAAQAAwAAAACAAIAAAAHAAAAAAAAAAAAAAAIAAAAAAABAAAAAAAJAAAAAAABAAAAAAAKAAAAAAABAAAAAAALAAAAAAABAAAAAAAMAAAAAAABAAAAAAANAAAAAAABAAAAAAAOAAAAAAABAAAAAAAPAAAAAAABAAAAAAAQAAAAAAACAAAAAAAKAAgAAQAAAAAAAAA=")

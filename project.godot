@@ -19,6 +19,13 @@ config/icon="res://icon.svg"
 
 window/size/resizable=false
 
+[global_group]
+
+box=""
+SquareBox=""
+TriangleBox=""
+CircleBox=""
+
 [input]
 
 ui_left={

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgfwlvipg3rlk"]
+
+[ext_resource type="Texture2D" uid="uid://hdqouq6hqq2e" path="res://Assets/PushBlocks_Goal/floor_goal_circle.png" id="1_5h01x"]
+[ext_resource type="Script" path="res://Scenes/Objects/circle_spot.gd" id="1_bps0p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rum4j"]
+size = Vector2(16, 16)
+
+[node name="CircleSpot" type="Area2D"]
+script = ExtResource("1_bps0p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_5h01x")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+scale = Vector2(0.9, 0.9)
+shape = SubResource("RectangleShape2D_rum4j")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
