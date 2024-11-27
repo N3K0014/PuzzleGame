@@ -25,17 +25,17 @@ func move(dir):
 	ray.target_position = inputs[dir] * grid_size
 	ray.force_raycast_update()
 	if !ray.is_colliding():
+		MovementSprite(dir)
 		var tween = create_tween()
 		tween.tween_property(self, "position", position + inputs[dir] * grid_size, 1.0/animation_speed).set_trans(Tween.TRANS_SINE)
 		playermoving = true
 		await tween.finished
 		playermoving = false
-		#player_sprite.play("SidePush")
 		player_sprite.play("Sprite")
 	else:
 		var collider = ray.get_collider()
 		if collider.is_in_group('box'):
-			MovementSprite(dir)
+			MovementSpritePush(dir)
 			if await collider.move(dir):
 				var tween = create_tween()
 				tween.tween_property(self, "position", position + inputs[dir] * grid_size, 1.0/animation_speed).set_trans(Tween.TRANS_SINE)
@@ -48,6 +48,18 @@ func move(dir):
 func MovementSprite(dir):
 	if inputs[dir] == Vector2.RIGHT:  # Moving right
 		$PlayerSprite.flip_h = false
+		player_sprite.play("WalkingSide")
+	elif inputs[dir] == Vector2.LEFT:  # Moving left
+		$PlayerSprite.flip_h = true
+		player_sprite.play("WalkingSide")
+	elif inputs[dir] == Vector2.DOWN:
+		player_sprite.play("WalkingF")
+	elif inputs[dir] == Vector2.UP:
+		player_sprite.play("WalkingB")
+
+func MovementSpritePush(dir):
+	if inputs[dir] == Vector2.RIGHT:  # Moving right
+		$PlayerSprite.flip_h = false
 		player_sprite.play("SidePush")
 	elif inputs[dir] == Vector2.LEFT:  # Moving left
 		$PlayerSprite.flip_h = true
@@ -55,7 +67,7 @@ func MovementSprite(dir):
 	elif inputs[dir] == Vector2.DOWN:
 		player_sprite.play("DownPush")
 	elif inputs[dir] == Vector2.UP:
-		player_sprite.play("UPPush")
+		player_sprite.play("UpPush")
 
 func _on_timer_timeout() -> void:
 	if !playermoving:
