@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://dkd8ud5lmesyh"]
+[gd_scene load_steps=17 format=3 uid="uid://dkd8ud5lmesyh"]
 
 [ext_resource type="Script" path="res://Scenes/player.gd" id="1_qtks7"]
 [ext_resource type="Texture2D" uid="uid://cl4uwel8uuf5j" path="res://Assets/Player/Player_Idle-sheet.png" id="1_r7133"]
 [ext_resource type="Texture2D" uid="uid://dbd0xvkbyn2gf" path="res://Assets/Player/Player_PushingSides.png" id="2_agagj"]
+[ext_resource type="AudioStream" uid="uid://dyc2vwgar42mg" path="res://Assets/Sounds/PushBox.mp3" id="4_uemuk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qgrtm"]
 atlas = ExtResource("1_r7133")
@@ -105,7 +106,6 @@ centered = false
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
-one_shot = true
 autostart = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -115,5 +115,12 @@ shape = SubResource("RectangleShape2D_6ulje")
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(8, 8)
 target_position = Vector2(0, 16)
+
+[node name="PushBox" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_uemuk")
+volume_db = -8.455
+pitch_scale = 2.07
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
