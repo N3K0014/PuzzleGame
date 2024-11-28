@@ -9,11 +9,11 @@ size = Vector2(16, 16)
 [node name="CircleBox" type="CharacterBody2D" groups=["CircleBox", "box"]]
 script = ExtResource("1_il6eo")
 
-[node name="Sprite2D" type="Sprite2D" parent="." groups=["box"]]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_awekj")
 centered = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["box"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_omh53")
 

@@ -25,6 +25,9 @@ box=""
 SquareBox=""
 TriangleBox=""
 CircleBox=""
+OneBox=""
+SecondBox=""
+ThirdBox=""
 
 [input]
 
