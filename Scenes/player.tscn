@@ -271,7 +271,7 @@ script = ExtResource("1_qtks7")
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4g1q1")
-animation = &"UpPush"
+animation = &"Sprite"
 centered = false
 
 [node name="Timer" type="Timer" parent="."]
