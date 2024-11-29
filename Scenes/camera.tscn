@@ -13,4 +13,21 @@ initial_position = 1
 size = Vector2i(120, 100)
 dialog_text = "Level Cleared"
 
+[node name="Buttons" type="Node" parent="."]
+
+[node name="Reset" type="Button" parent="Buttons"]
+offset_left = 320.0
+offset_top = 16.0
+offset_right = 371.0
+offset_bottom = 47.0
+text = "Reset"
+
+[node name="Exit" type="Button" parent="Buttons"]
+offset_left = 320.0
+offset_top = 64.0
+offset_right = 371.0
+offset_bottom = 95.0
+text = "Exit
+"
+
 [connection signal="confirmed" from="ConfirmationDialog" to="." method="_on_confirmation_dialog_confirmed"]
