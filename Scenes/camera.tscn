@@ -1,11 +1,16 @@
-[gd_scene format=3 uid="uid://cdijncj0n7ufl"]
+[gd_scene load_steps=2 format=3 uid="uid://cdijncj0n7ufl"]
+
+[ext_resource type="Script" path="res://Scenes/camera.gd" id="1_s2sdw"]
 
 [node name="Camera2D" type="Camera2D"]
 anchor_mode = 0
 zoom = Vector2(3, 3)
+script = ExtResource("1_s2sdw")
 
 [node name="ConfirmationDialog" type="AcceptDialog" parent="."]
 auto_translate_mode = 1
 initial_position = 1
 size = Vector2i(120, 100)
 dialog_text = "Level Cleared"
+
+[connection signal="confirmed" from="ConfirmationDialog" to="." method="_on_confirmation_dialog_confirmed"]

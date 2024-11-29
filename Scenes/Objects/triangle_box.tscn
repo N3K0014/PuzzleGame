@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://d5ighu1eklao"]
+
+[ext_resource type="Script" path="res://Scenes/Objects/BoxPush.gd" id="1_1cq86"]
+[ext_resource type="Texture2D" uid="uid://cmfjser4mqtbc" path="res://Assets/PushBlocks_Goal/block_triangle.png" id="2_qaxt7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rc5hk"]
+size = Vector2(16, 16)
+
+[node name="TriangleBox" type="CharacterBody2D" groups=["TriangleBox", "box"]]
+script = ExtResource("1_1cq86")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_qaxt7")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_rc5hk")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(8, 8)
+target_position = Vector2(0, 16)

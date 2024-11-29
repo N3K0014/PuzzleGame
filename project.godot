@@ -11,12 +11,23 @@ config_version=5
 [application]
 
 config/name="PuzzleGame"
+run/main_scene="res://Main_Menu/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
 window/size/resizable=false
+
+[global_group]
+
+box=""
+SquareBox=""
+TriangleBox=""
+CircleBox=""
+OneBox=""
+SecondBox=""
+ThirdBox=""
 
 [input]
 
