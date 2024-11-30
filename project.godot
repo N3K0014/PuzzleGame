@@ -15,6 +15,10 @@ run/main_scene="res://Main_Menu/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+NextLevel="*res://Scenes/NextLevel.gd"
+
 [display]
 
 window/size/resizable=false
