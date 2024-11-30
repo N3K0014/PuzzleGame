@@ -1,0 +1,75 @@
+[gd_scene load_steps=14 format=4 uid="uid://b4iplqniombp7"]
+
+[ext_resource type="Script" path="res://Scenes/Levels/level_3.gd" id="1_rf4aj"]
+[ext_resource type="Texture2D" uid="uid://y1nxqvvdoj4h" path="res://Assets/Blue_BG.png" id="2_hdrvm"]
+[ext_resource type="PackedScene" uid="uid://3a0hwima3evc" path="res://Scenes/TileSet.tscn" id="3_ksa3h"]
+[ext_resource type="PackedScene" uid="uid://ixs0ql35peu6" path="res://Scenes/Objects/square_spot.tscn" id="4_dkbcq"]
+[ext_resource type="PackedScene" uid="uid://c6obqu2nl2qvu" path="res://Scenes/Objects/one_spot.tscn" id="5_onmp2"]
+[ext_resource type="PackedScene" uid="uid://magkyfj636hp" path="res://Scenes/Objects/square_box.tscn" id="6_2kd6b"]
+[ext_resource type="PackedScene" uid="uid://dy8gm1sm16vkx" path="res://Scenes/Objects/two_spot.tscn" id="6_0251e"]
+[ext_resource type="PackedScene" uid="uid://db1fokrtr00vt" path="res://Scenes/Objects/one_block.tscn" id="7_15nn7"]
+[ext_resource type="PackedScene" uid="uid://bgfwlvipg3rlk" path="res://Scenes/Objects/circle_spot.tscn" id="7_osfsp"]
+[ext_resource type="PackedScene" uid="uid://dkd8ud5lmesyh" path="res://Scenes/player.tscn" id="8_0k6eb"]
+[ext_resource type="PackedScene" uid="uid://cdijncj0n7ufl" path="res://Scenes/camera.tscn" id="9_d17fo"]
+[ext_resource type="PackedScene" uid="uid://mm3dn4ppc04o" path="res://Scenes/Objects/two_block.tscn" id="10_brsgh"]
+[ext_resource type="PackedScene" uid="uid://bmbfj70n2mi8p" path="res://Scenes/Objects/circle_box.tscn" id="11_euig3"]
+
+[node name="Level3" type="Node2D"]
+script = ExtResource("1_rf4aj")
+
+[node name="BackGround2" type="Sprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+position = Vector2(0, -81)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_hdrvm")
+centered = false
+
+[node name="TileSet" parent="." instance=ExtResource("3_ksa3h")]
+position = Vector2(-1, -9)
+tile_map_data = PackedByteArray("AAAMAAgAAQAAAAAAAAALAAcAAQAAAAAAAAALAAUAAQAAAAAAAAAMAAQAAQAAAAAAAAAIAAQAAQAAAAAAAAAIAAgAAQAAAAAAAAAJAAYAAQAAAAAAAAAKAAYAAAADAAMAAAAMAAcAAQAAAAAAAAAMAAUAAQAAAAAAAAAKAAUAAQAAAAAAAAALAAQAAQAAAAAAAAAKAAQAAQAAAAAAAAAJAAQAAQAAAAAAAAAIAAUAAQAAAAAAAAAIAAcAAQAAAAAAAAAJAAcAAQAAAAAAAAAJAAgAAQAAAAAAAAAKAAcAAQAAAAAAAAALAAgAAQAAAAAAAAAIAAsAAQAAAAAAAAAJAAsAAQAAAAAAAAAKAAsAAQAAAAAAAAALAAsAAQAAAAAAAAAMAAsAAQAAAAAAAAAIAAoAAQAAAAAAAAAKAAoAAQAAAAAAAAAMAAoAAQAAAAAAAAAGAAoAAAAAAAEAAAAGAAsAAAAAAAEAAAAOAAoAAAACAAEAAAAOAAsAAAACAAEAAAAIAAkAAAACAAIAAAAHAAkAAAAEAAAAAAAHAAoAAAACAAEAAAAHAAsAAAACAAEAAAAMAAkAAAAAAAIAAAANAAkAAAAFAAAAAAANAAoAAAAAAAEAAAANAAsAAAAAAAEAAAAOAAcAAAACAAEAAAAOAAgAAAACAAEAAAAOAAkAAAACAAEAAAAKAAkAAAADAAMAAAAJAAkAAQAAAAAAAAAJAAoAAQAAAAAAAAALAAkAAQAAAAAAAAALAAoAAQAAAAAAAAAHAAgAAAACAAEAAAAHAAcAAAACAAEAAAAMAAYAAAAAAAIAAAAIAAYAAAACAAIAAAAHAAYAAAAEAAAAAAANAAYAAAAFAAAAAAANAAcAAAABAAEAAAANAAgAAAABAAEAAAAHAAUAAAACAAEAAAAHAAQAAAACAAEAAAANAAUAAAAAAAEAAAANAAQAAAAAAAEAAAAKAAgAAQAAAAAAAAALAAYAAQAAAAAAAAAJAAUAAQAAAAAAAAAMAAMAAAAAAAIAAAAIAAMAAAACAAIAAAAHAAMAAAAEAAAAAAANAAMAAAAFAAAAAAAJAAMAAQAAAAAAAAAKAAMAAQAAAAAAAAALAAMAAQAAAAAAAAAJAAIAAAABAAIAAAAKAAIAAAABAAIAAAALAAIAAAABAAIAAAAMAAIAAAAFAAAAAAAIAAIAAAAEAAAAAAAGAAQAAAAAAAEAAAAGAAUAAAAAAAEAAAAGAAYAAAAAAAEAAAAGAAcAAAAAAAEAAAAGAAgAAAAAAAEAAAAGAAkAAAAAAAEAAAAGAAMAAAAAAAAAAAAHAAIAAAAAAAEAAAAHAAEAAAAAAAAAAAAIAAEAAAABAAAAAAAJAAEAAAABAAAAAAAKAAEAAAABAAAAAAALAAEAAAABAAAAAAAMAAEAAAABAAAAAAANAAEAAAACAAAAAAANAAIAAAACAAEAAAAOAAMAAAACAAAAAAAOAAQAAAACAAEAAAAOAAUAAAACAAEAAAAOAAYAAAACAAEAAAAGAAwAAAAAAAEAAAAOAAwAAAACAAEAAAAGAA0AAAAAAAIAAAAOAA0AAAACAAIAAAAHAA0AAAABAAIAAAAIAA0AAAABAAIAAAAJAA0AAAABAAIAAAAKAA0AAAABAAIAAAALAA0AAAABAAIAAAAMAA0AAAABAAIAAAANAA0AAAABAAIAAAAIAAwAAAABAAAAAAAJAAwAAAABAAAAAAAKAAwAAAABAAAAAAALAAwAAAABAAAAAAAMAAwAAAABAAAAAAANAAwAAAAFAAEAAAAHAAwAAAAEAAEAAAALAP//AAAAAAIAAAA=")
+
+[node name="Spots" type="Node" parent="."]
+
+[node name="SquareSpot2" parent="Spots" instance=ExtResource("4_dkbcq")]
+position = Vector2(159, 39)
+
+[node name="SquareSpot" parent="Spots" instance=ExtResource("4_dkbcq")]
+position = Vector2(159, 151)
+
+[node name="OneSpot" parent="Spots" instance=ExtResource("5_onmp2")]
+position = Vector2(175, 55)
+
+[node name="TwoSpot" parent="Spots" instance=ExtResource("6_0251e")]
+position = Vector2(175, 103)
+
+[node name="CircleSpot" parent="Spots" instance=ExtResource("7_osfsp")]
+position = Vector2(143, 55)
+
+[node name="CircleSpot2" parent="Spots" instance=ExtResource("7_osfsp")]
+position = Vector2(143, 103)
+
+[node name="Box" type="Node" parent="."]
+
+[node name="SquareBox2" parent="Box" instance=ExtResource("6_2kd6b")]
+position = Vector2(143, 71)
+
+[node name="SquareBox" parent="Box" instance=ExtResource("6_2kd6b")]
+position = Vector2(143, 151)
+
+[node name="OneBlock" parent="Box" instance=ExtResource("7_15nn7")]
+position = Vector2(175, 151)
+
+[node name="TwoBlock" parent="Box" instance=ExtResource("10_brsgh")]
+position = Vector2(143, 119)
+
+[node name="CircleBox" parent="Box" instance=ExtResource("11_euig3")]
+position = Vector2(175, 71)
+
+[node name="CircleBox2" parent="Box" instance=ExtResource("11_euig3")]
+position = Vector2(175, 119)
+
+[node name="Player" parent="." instance=ExtResource("8_0k6eb")]
+position = Vector2(159, 167)
+
+[node name="Camera2D" parent="." instance=ExtResource("9_d17fo")]
