@@ -1,3 +1,82 @@
-[gd_scene format=3 uid="uid://bcrjspuewiuo3"]
+[gd_scene load_steps=16 format=4 uid="uid://bcrjspuewiuo3"]
+
+[ext_resource type="Texture2D" uid="uid://y1nxqvvdoj4h" path="res://Assets/Blue_BG.png" id="1_0odhl"]
+[ext_resource type="Script" path="res://Scenes/Levels/level_4.gd" id="1_s3c1b"]
+[ext_resource type="PackedScene" uid="uid://3a0hwima3evc" path="res://Scenes/TileSet.tscn" id="2_eotmo"]
+[ext_resource type="PackedScene" uid="uid://ixs0ql35peu6" path="res://Scenes/Objects/square_spot.tscn" id="3_oy05m"]
+[ext_resource type="PackedScene" uid="uid://c6obqu2nl2qvu" path="res://Scenes/Objects/one_spot.tscn" id="4_f5m1a"]
+[ext_resource type="PackedScene" uid="uid://dy8gm1sm16vkx" path="res://Scenes/Objects/two_spot.tscn" id="5_roo2q"]
+[ext_resource type="PackedScene" uid="uid://bgfwlvipg3rlk" path="res://Scenes/Objects/circle_spot.tscn" id="6_ymsh6"]
+[ext_resource type="PackedScene" uid="uid://dmalfnshjdvu5" path="res://Scenes/Objects/three_spot.tscn" id="7_rb567"]
+[ext_resource type="PackedScene" uid="uid://magkyfj636hp" path="res://Scenes/Objects/square_box.tscn" id="8_w817r"]
+[ext_resource type="PackedScene" uid="uid://db1fokrtr00vt" path="res://Scenes/Objects/one_block.tscn" id="9_8n2tb"]
+[ext_resource type="PackedScene" uid="uid://mm3dn4ppc04o" path="res://Scenes/Objects/two_block.tscn" id="10_m22i6"]
+[ext_resource type="PackedScene" uid="uid://bmbfj70n2mi8p" path="res://Scenes/Objects/circle_box.tscn" id="11_7dhuj"]
+[ext_resource type="PackedScene" uid="uid://dwaecmgkihuk7" path="res://Scenes/Objects/three_block.tscn" id="12_auj8e"]
+[ext_resource type="PackedScene" uid="uid://dkd8ud5lmesyh" path="res://Scenes/player.tscn" id="13_tjkle"]
+[ext_resource type="PackedScene" uid="uid://cdijncj0n7ufl" path="res://Scenes/camera.tscn" id="14_5vxnd"]
 
 [node name="level4" type="Node2D"]
+script = ExtResource("1_s3c1b")
+
+[node name="BackGround2" type="Sprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+position = Vector2(0, -80)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_0odhl")
+centered = false
+
+[node name="TileSet" parent="." instance=ExtResource("2_eotmo")]
+tile_map_data = PackedByteArray("AAAGAAsAAAAAAAIAAAAQAAsAAAAHAAEAAAAGAAMAAAAGAAAAAAAQAAMAAAACAAAAAAAHAAsAAAABAAIAAAAIAAsAAAACAAUAAAAJAAsAAAABAAMAAAAKAAsAAAADAAUAAAALAAsAAAABAAIAAAAMAAsAAAABAAIAAAANAAsAAAACAAUAAAAOAAsAAAABAAMAAAAPAAsAAAABAAMAAAAQAAoAAAADAAEAAAAQAAkAAAADAAEAAAAQAAgAAAADAAEAAAAQAAcAAAABAAQAAAAQAAYAAAACAAEAAAAQAAUAAAACAAEAAAAQAAQAAAACAAEAAAAPAAMAAAABAAAAAAAOAAMAAAADAAQAAAANAAMAAAABAAMAAAAMAAMAAAABAAMAAAALAAMAAAABAAMAAAAKAAMAAAABAAMAAAAJAAMAAAABAAMAAAAIAAMAAAABAAMAAAAHAAMAAAABAAMAAAAGAAQAAAADAAEAAAAGAAUAAAADAAEAAAAGAAYAAAADAAEAAAAGAAcAAAADAAEAAAAGAAgAAAADAAEAAAAGAAkAAAAAAAUAAAAGAAoAAAAAAAEAAAAHAAoAAAABAAEAAAAIAAoAAAACAAEAAAAIAAkAAAACAAAAAAAHAAkAAAABAAAAAAAKAAoAAAAAAAAAAAALAAkAAQAAAAAAAAAMAAkAAQAAAAAAAAANAAkAAQAAAAAAAAALAAoAAAABAAAAAAAMAAoAAAABAAAAAAANAAoAAAACAAAAAAAIAAUAAAADAAAAAAAIAAcAAAADAAIAAAAIAAYAAAADAAEAAAAKAAYAAAAAAAEAAAAKAAcAAAAAAAIAAAAKAAUAAAAAAAAAAAALAAUAAAACAAAAAAALAAYAAAACAAEAAAALAAcAAAACAAIAAAAOAAcAAAAAAAIAAAAOAAUAAAAAAAEAAAAOAAYAAAAAAAEAAAAPAAUAAAABAAEAAAAPAAcAAAABAAIAAAAPAAYAAAABAAEAAAAPAAQAAAABAAEAAAAOAAQAAAAAAAEAAAAHAAgAAQAAAAAAAAAIAAgAAQAAAAAAAAAJAAgAAQAAAAAAAAAJAAkAAQAAAAAAAAAKAAgAAQAAAAAAAAAKAAkAAQAAAAAAAAALAAgAAQAAAAAAAAAMAAgAAQAAAAAAAAANAAgAAQAAAAAAAAAOAAgAAQAAAAAAAAAPAAgAAQAAAAAAAAAPAAkAAQAAAAAAAAAPAAoAAQAAAAAAAAAOAAoAAQAAAAAAAAAOAAkAAQAAAAAAAAAMAAcAAQAAAAAAAAANAAcAAQAAAAAAAAANAAYAAQAAAAAAAAANAAUAAQAAAAAAAAANAAQAAQAAAAAAAAAMAAQAAQAAAAAAAAAMAAUAAQAAAAAAAAAJAAoAAQAAAAAAAAAJAAcAAQAAAAAAAAAJAAYAAQAAAAAAAAAJAAUAAQAAAAAAAAAJAAQAAQAAAAAAAAAKAAQAAQAAAAAAAAALAAQAAQAAAAAAAAAIAAQAAQAAAAAAAAAHAAQAAQAAAAAAAAAHAAUAAQAAAAAAAAAHAAYAAQAAAAAAAAAHAAcAAQAAAAAAAAA=")
+
+[node name="Spots" type="Node" parent="."]
+
+[node name="SquareSpot" parent="Spots" instance=ExtResource("3_oy05m")]
+position = Vector2(112, 64)
+script = null
+
+[node name="OneSpot" parent="Spots" instance=ExtResource("4_f5m1a")]
+position = Vector2(208, 96)
+script = null
+
+[node name="TwoSpot" parent="Spots" instance=ExtResource("5_roo2q")]
+position = Vector2(192, 96)
+script = null
+
+[node name="CircleSpot" parent="Spots" instance=ExtResource("6_ymsh6")]
+position = Vector2(224, 160)
+script = null
+
+[node name="ThreeSpot" parent="Spots" instance=ExtResource("7_rb567")]
+position = Vector2(144, 160)
+script = null
+
+[node name="Box" type="Node" parent="."]
+
+[node name="SquareBox" parent="Box" instance=ExtResource("8_w817r")]
+position = Vector2(224, 144)
+script = null
+
+[node name="OneBlock" parent="Box" instance=ExtResource("9_8n2tb")]
+position = Vector2(160, 128)
+script = null
+
+[node name="TwoBlock" parent="Box" instance=ExtResource("10_m22i6")]
+position = Vector2(208, 112)
+script = null
+
+[node name="CircleBox" parent="Box" instance=ExtResource("11_7dhuj")]
+position = Vector2(144, 96)
+script = null
+
+[node name="ThreeBlock" parent="Box" instance=ExtResource("12_auj8e")]
+position = Vector2(192, 80)
+script = null
+
+[node name="Player" parent="." instance=ExtResource("13_tjkle")]
+position = Vector2(192, 64)
+script = null
+
+[node name="Camera2D" parent="." instance=ExtResource("14_5vxnd")]
+script = null

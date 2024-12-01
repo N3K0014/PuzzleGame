@@ -24,3 +24,11 @@ func update_timelabel():
 
 func _on_timer_timeout() -> void:
 	$LoseDialog.popup()
+
+
+func _on_lose_dialog_canceled() -> void:
+	get_tree().quit()
+
+
+func _on_win_dialog_canceled() -> void:
+	NextLevel.Next()
