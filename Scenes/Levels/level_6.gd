@@ -3,7 +3,7 @@ extends Node2D
 var game_end = false
 
 func _ready() -> void:
-	NextLevel.i = 1
+	NextLevel.i = 6
 
 func _process(delta: float) -> void:
 	if game_end == false:

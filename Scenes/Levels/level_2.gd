@@ -2,6 +2,9 @@ extends Node2D
 
 var game_end = false
 
+func _ready() -> void:
+	NextLevel.i = 2
+
 func _process(delta: float) -> void:
 	if game_end == false:
 		var spots = $Spots.get_child_count()
@@ -10,5 +13,5 @@ func _process(delta: float) -> void:
 				spots -= 1
 				
 		if spots == 0:
-			$Camera2D/ConfirmationDialog.popup()
+			$Camera2D/WinDialog.popup()
 			game_end = true

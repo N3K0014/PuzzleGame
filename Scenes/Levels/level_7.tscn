@@ -1,0 +1,59 @@
+[gd_scene load_steps=10 format=4 uid="uid://c7mslic6oh710"]
+
+[ext_resource type="Script" path="res://Scenes/Levels/level_7.gd" id="1_1u17f"]
+[ext_resource type="PackedScene" uid="uid://dkd8ud5lmesyh" path="res://Scenes/player.tscn" id="1_wu560"]
+[ext_resource type="PackedScene" uid="uid://cdijncj0n7ufl" path="res://Scenes/camera.tscn" id="2_fd5jm"]
+[ext_resource type="PackedScene" uid="uid://bgfwlvipg3rlk" path="res://Scenes/Objects/circle_spot.tscn" id="4_waxph"]
+[ext_resource type="PackedScene" uid="uid://3a0hwima3evc" path="res://Scenes/TileSet.tscn" id="5_d0vn0"]
+[ext_resource type="PackedScene" uid="uid://bmbfj70n2mi8p" path="res://Scenes/Objects/circle_box.tscn" id="5_mx87m"]
+[ext_resource type="PackedScene" uid="uid://ixs0ql35peu6" path="res://Scenes/Objects/square_spot.tscn" id="5_qhqdq"]
+[ext_resource type="PackedScene" uid="uid://magkyfj636hp" path="res://Scenes/Objects/square_box.tscn" id="7_7davw"]
+[ext_resource type="Texture2D" uid="uid://y1nxqvvdoj4h" path="res://Assets/Blue_BG.png" id="9_djsba"]
+
+[node name="Level7" type="Node2D"]
+script = ExtResource("1_1u17f")
+
+[node name="BackGround2" type="Sprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+position = Vector2(0, -80)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("9_djsba")
+centered = false
+
+[node name="TileSet" parent="." instance=ExtResource("5_d0vn0")]
+position = Vector2(16, 0)
+tile_map_data = PackedByteArray("AAAHAAEAAAAAAAEAAAAHAAIAAAAAAAEAAAAHAAMAAAAAAAEAAAAHAAcAAAAAAAEAAAAHAAgAAAAAAAEAAAAHAAkAAAAAAAEAAAAHAAoAAAAAAAEAAAAHAAsAAAAAAAEAAAAHAAwAAAAAAAIAAAAIAAIAAAACAAEAAAAIAAMAAAACAAEAAAAIAAcAAAACAAEAAAAIAAgAAAACAAEAAAAIAAkAAAACAAEAAAAIAAoAAAAEAAEAAAAIAAwAAAABAAIAAAAJAAEAAAABAAIAAAAJAAIAAQAAAAAAAAAJAAMAAQAAAAAAAAAJAAcAAQAAAAAAAAAJAAgAAQAAAAAAAAAJAAkAAQAAAAAAAAAJAAwAAAABAAIAAAAKAAEAAAABAAIAAAAKAAIAAQAAAAAAAAAKAAMAAQAAAAAAAAAKAAQAAQAAAAAAAAAKAAUAAQAAAAAAAAAKAAYAAQAAAAAAAAAKAAcAAQAAAAAAAAAKAAkAAQAAAAAAAAAKAAoAAQAAAAAAAAAKAAsAAAABAAAAAAAKAAwAAAABAAIAAAALAAUAAQAAAAAAAAALAAYAAQAAAAAAAAALAAwAAAABAAIAAAAMAAgAAQAAAAAAAAAMAAkAAQAAAAAAAAAMAAoAAQAAAAAAAAAMAAsAAAABAAAAAAAMAAwAAAABAAIAAAAHAAAAAAAAAAAAAAAIAAAAAAABAAAAAAAJAAAAAAABAAAAAAAKAAAAAAABAAAAAAALAAAAAAABAAAAAAAMAAAAAAABAAAAAAAKAAgAAQAAAAAAAAALAAEAAAABAAIAAAAMAAIAAAAAAAEAAAAMAAMAAAAAAAEAAAAMAAQAAAAAAAEAAAAMAAUAAAAAAAEAAAAMAAYAAAAAAAIAAAAJAAQAAAACAAAAAAAIAAEAAAAEAAAAAAAIAAYAAAAEAAAAAAALAAIAAQAAAAAAAAALAAMAAQAAAAAAAAALAAQAAQAAAAAAAAALAAcAAQAAAAAAAAALAAgAAQAAAAAAAAAMAAcAAQAAAAAAAAAJAAYAAAACAAIAAAAJAAUAAAACAAEAAAAIAAQAAAAEAAEAAAAIAAUAAAABAAEAAAAHAAQAAAAAAAEAAAAHAAUAAAAAAAEAAAAHAAYAAAAAAAEAAAAMAAEAAAAFAAAAAAANAAAAAAABAAAAAAANAAkAAAAAAAEAAAANAAoAAAAAAAEAAAANAAcAAAAAAAEAAAANAAUAAAABAAEAAAANAAQAAAABAAEAAAANAAMAAAABAAEAAAANAAIAAAABAAEAAAANAAEAAAABAAEAAAANAAYAAAAFAAAAAAAOAAYAAAACAAEAAAAOAAcAAAACAAEAAAANAAgAAAAAAAEAAAANAAsAAAAFAAEAAAAOAAsAAAACAAEAAAANAAwAAAABAAIAAAAOAAwAAAACAAIAAAAIAAsAAAABAAEAAAAJAAsAAAAEAAEAAAALAAsAAAAFAAIAAAALAAoAAAADAAAAAAAJAAoAAAACAAAAAAAOAAoAAAACAAEAAAAOAAkAAAACAAEAAAAOAAgAAAACAAEAAAAOAAUAAAACAAEAAAAOAAQAAAACAAEAAAAOAAMAAAACAAEAAAAOAAIAAAACAAEAAAAOAAEAAAACAAEAAAAOAAAAAAACAAAAAAA=")
+
+[node name="Player" parent="." instance=ExtResource("1_wu560")]
+position = Vector2(159, 47)
+
+[node name="Spots" type="Node" parent="."]
+
+[node name="SquareSpot3" parent="Spots" instance=ExtResource("5_qhqdq")]
+position = Vector2(192, 144)
+
+[node name="SquareSpot2" parent="Spots" instance=ExtResource("5_qhqdq")]
+position = Vector2(159, 144)
+
+[node name="CircleSpot" parent="Spots" instance=ExtResource("4_waxph")]
+position = Vector2(208, 160)
+
+[node name="SquareSpot" parent="Spots" instance=ExtResource("5_qhqdq")]
+position = Vector2(176, 160)
+
+[node name="Box" type="Node" parent="."]
+
+[node name="SquareBox3" parent="Box" instance=ExtResource("7_7davw")]
+position = Vector2(176, 96)
+
+[node name="SquareBox2" parent="Box" instance=ExtResource("7_7davw")]
+position = Vector2(176, 48)
+
+[node name="CircleBox" parent="Box" instance=ExtResource("5_mx87m")]
+position = Vector2(192, 80)
+
+[node name="SquareBox" parent="Box" instance=ExtResource("7_7davw")]
+position = Vector2(176, 64)
+
+[node name="Camera2D" parent="." instance=ExtResource("2_fd5jm")]

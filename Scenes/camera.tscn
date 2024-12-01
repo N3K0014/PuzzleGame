@@ -7,10 +7,72 @@ anchor_mode = 0
 zoom = Vector2(3, 3)
 script = ExtResource("1_s2sdw")
 
-[node name="ConfirmationDialog" type="AcceptDialog" parent="."]
+[node name="WinDialog" type="AcceptDialog" parent="."]
 auto_translate_mode = 1
+title = "You Win!"
 initial_position = 1
 size = Vector2i(120, 100)
 dialog_text = "Level Cleared"
 
-[connection signal="confirmed" from="ConfirmationDialog" to="." method="_on_confirmation_dialog_confirmed"]
+[node name="LoseDialog" type="ConfirmationDialog" parent="."]
+title = "You lose"
+initial_position = 1
+size = Vector2i(223, 106)
+min_size = Vector2i(100, 69)
+max_size = Vector2i(300, 1000)
+ok_button_text = "Yes"
+dialog_text = "You've Run out of time,
+Would you like to try again"
+cancel_button_text = "Quit"
+
+[node name="Buttons" type="Node" parent="."]
+
+[node name="Reset" type="Button" parent="Buttons"]
+offset_left = 336.0
+offset_right = 496.0
+offset_bottom = 54.0
+scale = Vector2(0.3, 0.3)
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 33
+text = "Reset"
+
+[node name="Exit" type="Button" parent="Buttons"]
+offset_left = 336.0
+offset_top = 16.0
+offset_right = 496.0
+offset_bottom = 70.0
+scale = Vector2(0.3, 0.3)
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 33
+text = "Exit
+"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 120.0
+one_shot = true
+autostart = true
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 48.0
+offset_bottom = 32.0
+
+[node name="Timer" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 112.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+theme_override_font_sizes/font_size = 40
+text = "Timer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="confirmed" from="WinDialog" to="." method="_on_confirmation_dialog_confirmed"]
+[connection signal="confirmed" from="LoseDialog" to="." method="_on_lose_dialog_confirmed"]
+[connection signal="pressed" from="Buttons/Reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="Buttons/Exit" to="." method="_on_exit_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
