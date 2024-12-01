@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cdijncj0n7ufl"]
+[gd_scene load_steps=3 format=3 uid="uid://cdijncj0n7ufl"]
 
 [ext_resource type="Script" path="res://Scenes/camera.gd" id="1_s2sdw"]
+[ext_resource type="AudioStream" uid="uid://ctes3t2l4fdrd" path="res://Assets/Sounds/ほんわかぷっぷー.mp3" id="2_12tst"]
 
 [node name="Camera2D" type="Camera2D"]
 anchor_mode = 0
@@ -71,6 +72,13 @@ text = "Timer"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_12tst")
+volume_db = -10.0
+autoplay = true
+parameters/looping = false
+
+[connection signal="canceled" from="WinDialog" to="." method="_on_win_dialog_canceled"]
 [connection signal="confirmed" from="WinDialog" to="." method="_on_confirmation_dialog_confirmed"]
 [connection signal="canceled" from="LoseDialog" to="." method="_on_lose_dialog_canceled"]
 [connection signal="confirmed" from="LoseDialog" to="." method="_on_lose_dialog_confirmed"]

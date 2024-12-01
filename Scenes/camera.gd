@@ -28,3 +28,7 @@ func _on_timer_timeout() -> void:
 
 func _on_lose_dialog_canceled() -> void:
 	get_tree().quit()
+
+
+func _on_win_dialog_canceled() -> void:
+	NextLevel.Next()
