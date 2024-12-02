@@ -1,10 +1,15 @@
 extends Node2D
 
 var game_end = false
+var time = 60.0
 
 func _ready() -> void:
+	var timer = $Camera2D/Timer
+	if timer != null:
+		timer.wait_time = time
+		timer.start()
 	NextLevel.i = 1
-
+	
 func _process(delta: float) -> void:
 	if game_end == false:
 		var spots = $Spots.get_child_count()
