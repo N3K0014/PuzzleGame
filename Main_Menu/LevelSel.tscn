@@ -1,0 +1,137 @@
+[gd_scene load_steps=3 format=3 uid="uid://nclmrqqojxef"]
+
+[ext_resource type="Texture2D" uid="uid://y1nxqvvdoj4h" path="res://Assets/Blue_BG.png" id="1_orht6"]
+[ext_resource type="Script" path="res://Main_Menu/level_sel.gd" id="1_rk8ob"]
+
+[node name="Control" type="Control"]
+clip_contents = true
+layout_mode = 3
+anchor_right = 0.333
+anchor_bottom = 0.37
+offset_right = 0.384003
+offset_bottom = -20.76
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+script = ExtResource("1_rk8ob")
+
+[node name="Buttons" type="Node" parent="."]
+
+[node name="Level1" type="Button" parent="Buttons"]
+offset_left = 128.0
+offset_top = 64.0
+offset_right = 311.0
+offset_bottom = 247.0
+scale = Vector2(0.7, 0.7)
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "Level 1"
+
+[node name="Level2" type="Button" parent="Buttons"]
+offset_left = 320.0
+offset_top = 64.0
+offset_right = 503.0
+offset_bottom = 247.0
+scale = Vector2(0.7, 0.7)
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "Level 2"
+
+[node name="Level3" type="Button" parent="Buttons"]
+offset_left = 512.0
+offset_top = 64.0
+offset_right = 695.0
+offset_bottom = 247.0
+scale = Vector2(0.7, 0.7)
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "Level 3"
+
+[node name="Level4" type="Button" parent="Buttons"]
+offset_left = 704.0
+offset_top = 64.0
+offset_right = 887.0
+offset_bottom = 247.0
+scale = Vector2(0.7, 0.7)
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "Level 4"
+
+[node name="Level5" type="Button" parent="Buttons"]
+offset_left = 896.0
+offset_top = 64.0
+offset_right = 1079.0
+offset_bottom = 247.0
+scale = Vector2(0.7, 0.7)
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "Level 5"
+
+[node name="Level6" type="Button" parent="Buttons"]
+offset_left = 192.0
+offset_top = 256.0
+offset_right = 375.0
+offset_bottom = 439.0
+scale = Vector2(0.7, 0.7)
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "Level 6"
+
+[node name="Level7" type="Button" parent="Buttons"]
+offset_left = 384.0
+offset_top = 256.0
+offset_right = 567.0
+offset_bottom = 439.0
+scale = Vector2(0.7, 0.7)
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "Level 7"
+
+[node name="Level8" type="Button" parent="Buttons"]
+offset_left = 640.0
+offset_top = 256.0
+offset_right = 823.0
+offset_bottom = 439.0
+scale = Vector2(0.7, 0.7)
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "Level 8"
+
+[node name="Level9" type="Button" parent="Buttons"]
+offset_left = 832.0
+offset_top = 256.0
+offset_right = 1015.0
+offset_bottom = 439.0
+scale = Vector2(0.7, 0.7)
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "Level 9"
+
+[node name="Menu" type="Button" parent="Buttons"]
+offset_left = 448.0
+offset_top = 448.0
+offset_right = 813.0
+offset_bottom = 631.0
+scale = Vector2(0.7, 0.7)
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 70
+text = "< Menu"
+
+[node name="BackGround2" type="Sprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+position = Vector2(0, -85.3333)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_orht6")
+centered = false
+
+[connection signal="pressed" from="Buttons/Level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="Buttons/Level2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="Buttons/Level3" to="." method="_on_level_3_pressed"]
+[connection signal="pressed" from="Buttons/Level4" to="." method="_on_level_4_pressed"]
+[connection signal="pressed" from="Buttons/Level5" to="." method="_on_level_5_pressed"]
+[connection signal="pressed" from="Buttons/Level6" to="." method="_on_level_6_pressed"]
+[connection signal="pressed" from="Buttons/Level7" to="." method="_on_level_7_pressed"]
+[connection signal="pressed" from="Buttons/Level8" to="." method="_on_level_8_pressed"]
+[connection signal="pressed" from="Buttons/Level9" to="." method="_on_level_9_pressed"]
+[connection signal="pressed" from="Buttons/Menu" to="." method="_on_menu_pressed"]

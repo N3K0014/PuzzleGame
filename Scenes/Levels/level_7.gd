@@ -1,8 +1,13 @@
 extends Node2D
 
 var game_end = false
+var time = 60.0
 
 func _ready() -> void:
+	var timer = $Camera2D/Timer
+	if timer != null:
+		timer.wait_time = time
+		timer.start()
 	NextLevel.i = 7
 
 func _process(delta: float) -> void:
