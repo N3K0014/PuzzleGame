@@ -7,7 +7,7 @@ func _on_reset_pressed() -> void:
 	get_tree().reload_current_scene()
 
 func _on_exit_pressed() -> void:
-	get_tree().quit()
+	get_tree().change_scene_to_file("res://Main_Menu/main_menu.tscn")
 
 func _on_confirmation_dialog_confirmed() -> void:
 	NextLevel.Next()
@@ -27,7 +27,7 @@ func _on_timer_timeout() -> void:
 
 
 func _on_lose_dialog_canceled() -> void:
-	get_tree().quit()
+	get_tree().change_scene_to_file("res://Main_Menu/main_menu.tscn")
 
 
 func _on_win_dialog_canceled() -> void:
